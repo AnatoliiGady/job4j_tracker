@@ -1,7 +1,5 @@
 package ru.job4j.oop;
 
-import java.security.spec.RSAOtherPrimeInfo;
-
 public class Cat {
 
     private String food;
