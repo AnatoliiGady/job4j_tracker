@@ -25,10 +25,10 @@ public class BatteryTest {
 
     @Test
     public void whenThis95Another0ThenAnotherLoadEqual80() {
-        Battery charger = new Battery(95);
+        Battery charger = new Battery(90);
         Battery another = new Battery(0);
         charger.exchange(another);
-        int expected = 95;
+        int expected = 90;
         assertThat(another.getLoad()).isEqualTo(expected);
     }
 }
