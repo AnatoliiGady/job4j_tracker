@@ -33,11 +33,9 @@ public class Calculator {
         System.out.println(rst);
         int rstminus = minus(12);
         System.out.println(rstminus);
-        Calculator calculator1 = new Calculator();
         int rstdivide = calculator.divide(50);
         System.out.println(rstdivide);
-        Calculator calculator2 = new Calculator();
-        int rstAll = calculator2.sumAllOperation(5);
+        int rstAll = calculator.sumAllOperation(5);
         System.out.println(rstAll);
     }
 }
