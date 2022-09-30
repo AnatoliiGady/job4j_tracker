@@ -4,6 +4,18 @@ public class Item {
     private int id;
     private String name;
 
+    public Item() {
+    }
+
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public Item(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
@@ -26,17 +38,11 @@ public class Item {
     }
 
     public static void main(String[] args) {
-        Item item = new Item();
-        item.printInfo();
-        System.out.println();
-        Item item1 = new Item();
-        item1.setName("Anatolii Gady");
-        item1.printInfo();
-        System.out.println();
-        Item item2 = new Item();
-        item2.setId(32);
-        item2.setName("Anatolii Gady");
-        item2.printInfo();
-
+        Item noParameters = new Item();
+        noParameters.printInfo();
+        Item oneParameters = new Item("Anatolii Gady");
+        oneParameters.printInfo();
+        Item twoParameters = new Item("Anatolii Gady", 32);
+        twoParameters.printInfo();
     }
 }
