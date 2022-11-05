@@ -23,7 +23,8 @@ public class StartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction()
+                new CreateAction(), new DeleteAction(), new ShowAllAction(),
+                new EditActoin(), new FindIdAction(), new FindNameAction(), new ExitActoin()
         };
         new StartUI().init(input, tracker, actions);
     }
