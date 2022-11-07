@@ -1,6 +1,8 @@
-package ru.job4j.tracker;
+package ru.job4j.pojo.tracker;
 
 import org.junit.jupiter.api.Test;
+import ru.job4j.tracker.*;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class StartUITest {
@@ -65,8 +67,8 @@ class StartUITest {
                 new ExitAction()
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString()).isEqualTo
-                ("Menu." + System.lineSeparator()
+        assertThat(out.toString()).isEqualTo(
+                "Menu." + System.lineSeparator()
                 + "0. Exit program" + System.lineSeparator());
 
     }
