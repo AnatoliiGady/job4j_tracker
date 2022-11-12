@@ -18,7 +18,7 @@ class CountTest {
     }
 
     @Test
-    public void whenStart1Finish10Summa45(){
+    public void whenStart1Finish10Summa45() {
         int start = 1;
         int finish = 10;
         int expected = 45;
