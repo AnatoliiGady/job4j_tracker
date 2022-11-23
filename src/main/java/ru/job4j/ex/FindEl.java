@@ -15,6 +15,20 @@ public class FindEl {
         return rsl;
     }
 
+    public static boolean sent(String value, String[] abuse) throws ElementAbuseException {
+        return true;
+    }
+
+    public static void process(String[] values, String key, String[] abuses) {
+        try {
+            if (indexOf(values, key) != -1) {
+                sent(key, abuses);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         try {
             indexOf(new String[]{"One", "two"}, "Three");
