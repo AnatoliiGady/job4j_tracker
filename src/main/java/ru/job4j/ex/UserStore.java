@@ -7,30 +7,26 @@ public class UserStore {
         for (User user : users) {
             if (user.getUsername().equals(login)) {
                 rsl = user;
-                System.out.println("User: " + user + " found");
                 break;
-            } else {
-                throw new UserNotFoundException("User not found");
             }
+        }
+        if (rsl == null) {
+            throw new UserNotFoundException("User not found");
         }
         return rsl;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (user.isValid() && user.getUsername().length() < 4) {
-            System.out.println("User: " + user.getUsername() + " passed validation");
-            return true;
-        } else {
+        if (!user.isValid() || user.getUsername().length() < 3) {
             throw new UserInvalidException("User: " + user.getUsername() + "did not pass validation");
         }
+        return true;
     }
 
     public static void main(String[] args) {
-        User[] users = {
-                new User("Anatolii Gady", false)
-        };
+        User[] users = {new User("Anatolii Gady", false)};
         try {
-            User user = findUser(users, "Ana");
+            User user = findUser(users, "Anatolii Gady");
             if (validate(user)) {
                 System.out.println("This user has in access");
             }
