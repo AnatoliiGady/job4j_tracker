@@ -7,8 +7,10 @@ public class UsageHashSet {
         HashSet<String> names = new HashSet<>();
         names.add("Lada");
         names.add("BMW");
+        names.add("Lada");
         names.add("Volvo");
         names.add("Toyota");
+        names.add("BMW");
         for (String name : names) {
             System.out.println(name);
         }
