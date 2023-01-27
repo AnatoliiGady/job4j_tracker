@@ -47,4 +47,29 @@ public class Item {
         return "Item{" + "id = " + id + ", name = " + name
                 + '\'' + ", created = " + created.format(FORMATTER) + '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Item item)) {
+            return false;
+        }
+        if (id != item.id) {
+            return false;
+        }
+        if (!name.equals(item.name)) {
+            return false;
+        }
+        return created.equals(item.created);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + name.hashCode();
+        result = 31 * result + created.hashCode();
+        return result;
+    }
 }
