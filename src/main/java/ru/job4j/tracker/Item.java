@@ -40,7 +40,8 @@ public class Item {
     }
 
     public LocalDateTime getCreated() {
-        return created; }
+        return created;
+    }
 
     @Override
     public String toString() {
