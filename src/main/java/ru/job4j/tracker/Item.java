@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import java.time.LocalDateTime;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class Item {
     private int id;
@@ -54,23 +55,15 @@ public class Item {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Item item)) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        if (id != item.id) {
-            return false;
-        }
-        if (!name.equals(item.name)) {
-            return false;
-        }
-        return created.equals(item.created);
+        Item item = (Item) o;
+        return Objects.equals(name, item.name);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + name.hashCode();
-        result = 31 * result + created.hashCode();
-        return result;
+        return Objects.hash(name);
     }
 }
