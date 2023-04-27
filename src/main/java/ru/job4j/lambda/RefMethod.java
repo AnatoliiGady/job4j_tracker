@@ -8,7 +8,8 @@ public class RefMethod {
     public static void main(String[] args) {
         List<String> names = Arrays.asList(
                 "Ivan",
-                "Petr Arsentev"
+                "Petr Arsentev",
+                "Anatolii Gady"
         );
         Consumer<String> out = RefMethod::cutOut;
         names.forEach(out);
