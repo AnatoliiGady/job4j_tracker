@@ -15,7 +15,10 @@ public class Address {
         this.street = street;
         this.home = home;
         this.apartment = apartment;
+    }
 
+    public String getCity() {
+        return city;
     }
 
     @Override
