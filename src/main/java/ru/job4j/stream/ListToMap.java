@@ -12,7 +12,7 @@ public class ListToMap {
                         Collectors.toMap(
                                 Student::getSurname,
                                 e -> e,
-                                (key, value) -> key
+                                (prev, current) -> prev
                         )
                 );
     }
