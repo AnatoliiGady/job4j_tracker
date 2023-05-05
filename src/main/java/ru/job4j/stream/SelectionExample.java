@@ -25,7 +25,7 @@ public class SelectionExample {
         System.out.println(rsl1);
         String res2 = strings
                 .stream()
-                .skip(strings.size() - 1) // устанавливается количество пропускаемых элементов
+                .skip(strings.size() - 1)
                 .findFirst()
                 .orElse("По умолчанию");
         System.out.println(res2);
