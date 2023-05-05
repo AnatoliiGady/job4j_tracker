@@ -76,6 +76,7 @@ public class Car {
                 .buildColor("Red")
                 .build();
         System.out.println(car);
+
         Car car1 = new Builder()
                 .buildBrand("Lexus")
                 .buildModel("LX470")
