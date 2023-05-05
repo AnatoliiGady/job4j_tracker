@@ -9,7 +9,6 @@ import java.util.Optional;
 public class ReduceExample {
     public static void main(String[] args) {
         List<Integer> nums = List.of(1, 2, 3, 4);
-        //TODO a и b это первые два элемента потока, a + b это действие которое нужно сделать
         Optional<Integer> sum = nums.stream()
                 .reduce((a, b) -> a + b);
         System.out.println(sum.get());

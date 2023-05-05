@@ -17,8 +17,6 @@ public class IterableLambdaUsage {
         collection.add("post");
         Predicate<String> predicate = s -> s.length() == 4;
         collection.removeIf(predicate);
-
-        //collection.forEach(System.out::println);
         List<Integer> list = Arrays.asList(2, 4, 7, 9, 12);
         UnaryOperator<Integer> operator = i -> i * i;
         list.replaceAll(operator);

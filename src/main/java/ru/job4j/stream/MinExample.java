@@ -13,8 +13,6 @@ public class MinExample {
                 new Person("Виктор", 16),
                 new Person("Анна", 29)
         );
-        //TODO находим минимальный возраст. Метод min возвращает элемент типа Optional, по этому
-        //TODO создаем переменную и получаем возраст
         Optional<Person> yougestPerson = people.stream()
                 .min(Comparator.comparing(Person::getAge));
 
@@ -30,13 +28,11 @@ public class MinExample {
                 .filter(e -> e % 2 == 0)
                 .count();
         System.out.println(sum);
-//TODO находим среднее арифм. возрастов
         OptionalDouble average = people.stream()
                 .mapToInt(Person::getAge)
                 .average();
         double avg = average.getAsDouble();
         System.out.println(avg);
-//TODO найдем сумму всех людей
         int sumAge = people.stream()
                 .mapToInt(Person::getAge)
                 .sum();
