@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class Analyze {
     public static double averageScore(Stream<Pupil> stream) {
         return stream
-                .flatMap(s -> s.subjects().stream())
+                .flatMap(pupil -> pupil.subjects().stream())
                 .mapToInt(Subject::score)
                 .average()
                 .orElse(0);
@@ -17,7 +17,7 @@ public class Analyze {
 
     public static List<Tuple> averageScoreByPupil(Stream<Pupil> stream) {
         return stream
-                .map(s -> new Tuple(s.name(), s.subjects()
+                .map(pupil -> new Tuple(pupil.name(), pupil.subjects()
                         .stream()
                         .mapToInt(Subject::score)
                         .average()
@@ -27,17 +27,17 @@ public class Analyze {
 
     public static List<Tuple> averageScoreBySubject(Stream<Pupil> stream) {
         return stream
-                .flatMap(s -> s.subjects().stream())
+                .flatMap(pupil -> pupil.subjects().stream())
                 .collect(Collectors.groupingBy(Subject::name, LinkedHashMap::new,
                         Collectors.averagingDouble(Subject::score)))
                 .entrySet().stream()
-                .map(s -> new Tuple(s.getKey(), s.getValue()))
+                .map(entry -> new Tuple(entry.getKey(), entry.getValue()))
                 .collect(Collectors.toList());
     }
 
     public static Tuple bestStudent(Stream<Pupil> stream) {
         return stream
-                .map(s -> new Tuple(s.name(), s.subjects()
+                .map(pupil -> new Tuple(pupil.name(), pupil.subjects()
                         .stream()
                         .mapToInt(Subject::score)
                         .sum()))
@@ -47,11 +47,11 @@ public class Analyze {
 
     public static Tuple bestSubject(Stream<Pupil> stream) {
         return stream
-                .flatMap(s -> s.subjects().stream())
-                .collect(Collectors.groupingBy(Subject::name, LinkedHashMap::new,
+                .flatMap(pupil -> pupil.subjects().stream())
+                .collect(Collectors.groupingBy(Subject::name,
                         Collectors.summingDouble(Subject::score)))
                 .entrySet().stream()
-                .map(s -> new Tuple(s.getKey(), s.getValue()))
+                .map(entry -> new Tuple(entry.getKey(), entry.getValue()))
                 .max(Comparator.comparing(Tuple::score))
                 .orElse(null);
     }
